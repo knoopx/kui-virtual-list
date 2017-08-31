@@ -1,11 +1,14 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-module.exports = {
-  entry: './example',
+module.exports = [{
+  entry: {
+    main: './src',
+    example: './example'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
@@ -23,3 +26,4 @@ module.exports = {
     ],
   },
 }
+]
